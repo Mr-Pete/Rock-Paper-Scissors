@@ -2,19 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Rock Paper Scissors - Classic game, but in a new digital format.">
-    <meta name="keywords" content="game classic simple games fun tea break">
-    <meta name="author" content="Mr. Pete">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rock Paper Scissors - Classic game, but in a new digital format.">
+  <meta name="keywords" content="game classic simple games fun tea break">
+  <meta name="author" content="Mr. Pete">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-    
+  <h1>Rock Paper Scissors</h1>
+  <div class="game">
+    <div class="hand-container">
+      <h2>Computer</h2>
+      <div id="computer-hand" class="hand" style="background-image: url('images/rock.png')"></div>
+    </div>
+    <div class="hand-container">
+      <h2>Player</h2>
+      <div id="player-hand" class="hand player-hand" style="background-image: url('images/rock.png')"></div>
+    </div>
+  </div>
+  <div class="choices">
+    <img src="assets/images/rock.png" alt="Rock" class="choice" data-choice="rock" />
+    <img src="assets/images/paper.png" alt="Paper" class="choice" data-choice="paper" />
+    <img src="assets/images/scissor.png" alt="Scissors" class="choice" data-choice="scissors" />
+  </div>
+  <div class="result" id="result">Click "Play Again" to start!</div>
+  <div class="score" id="score">Player: 0 | Computer: 0</div>
+  <button class="play-again" id="play-again">Play Again</button>
+  <script>
+
+    let playerScore = 0;
+    let computerScore = 0;
+
+    const choices = document.querySelectorAll(".choice");
+    const playerHand = document.getElementById("player-hand");
+    const computerHand = document.getElementById("computer-hand");
+    const result = document.getElementById("result");
+    const score = document.getElementById("score");
+    const playAgainButton = document.getElementById("play-again");
+
+    const hands = {
+      rock: "images/rock.png",
+      paper: "images/paper.png",
+      scissors: "images/scissor.png",
+    };
+
+  </script>
 </body>
 
 </html>
