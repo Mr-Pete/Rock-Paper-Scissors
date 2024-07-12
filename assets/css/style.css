@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+
+body {
+    font-family: "Fredoka One", cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+h1,
+h2,
+.result,
+.score {
+    color: white;
+}
+
+.game {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.hand-container {
+    text-align: center;
+}
+
+.hand {
+    width: 200px;
+    height: 120px;
+    background-size: cover;
+    background-image: url("images/rock.png");
+}
+
+.player-hand {
+    transform: scaleX(-1);
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.choice {
+    width: 100px;
+    height: 70px;
+    cursor: pointer;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.choice.enabled {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.result,
+.score {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.play-again {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ff5733;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .play-again:hover {
+    background-color: #c70039;
+    transform: scale(1.1);
+  }
