@@ -49,7 +49,40 @@
       paper: "images/paper.png",
       scissors: "images/scissor.png",
     };
+    //   function for getting player choice
+    function getComputerChoice() {
+      const choices = ["rock", "paper", "scissors"];
+      const randomIndex = Math.floor(Math.random() * choices.length);
+      return choices[randomIndex];
+    }
 
+    //   function for displaying hands images of player and computer in html
+    function displayChoices(playerChoice, computerChoice) {
+      playerHand.style.backgroundImage = `url(${hands[playerChoice]})`;
+      computerHand.style.backgroundImage = `url(${hands[computerChoice]})`;
+    }
+
+    //   function to decide winner and it returns winner message
+    function getWinner(player, computer) {
+      if (player === computer) {
+        return "It's a tie!";
+      }
+      if (
+        (player === "rock" && computer === "scissors") ||
+        (player === "paper" && computer === "rock") ||
+        (player === "scissors" && computer === "paper")
+      ) {
+        return "You win!";
+      }
+      return "Computer wins!";
+    }
+
+    //   a function which will take winner message, computer choice and player choice and show them in result div
+    function displayResult(winner, playerChoice, computerChoice) {
+      result.innerHTML = `${winner} <br> Player chose: ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
+        } <br> Computer chose: ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
+        }`;
+    }
   </script>
 </body>
 
