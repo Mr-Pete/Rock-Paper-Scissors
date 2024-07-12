@@ -79,10 +79,42 @@
 
     //   a function which will take winner message, computer choice and player choice and show them in result div
     function displayResult(winner, playerChoice, computerChoice) {
-      result.innerHTML = `${winner} <br> Player chose: ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
-        } <br> Computer chose: ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
+      result.innerHTML = `${winner} 
+      <br> Player chose: ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)
+        } 
+      <br> Computer chose: ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
         }`;
     }
+    //   this is the funciton which takes winner message and update scores of the winner
+    function updateScore(winner) {
+      if (winner === "You win!") {
+        playerScore++;
+      } else if (winner === "Computer wins!") {
+        computerScore++;
+      }
+      score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+    }
+
+    //   function to enable choices for the player so that he can click them
+    function enableChoices() {
+        // enabling all choices by addin enabled class from choices array of divs from html
+        choices.forEach((choice) => {
+          choice.classList.add("enabled");
+        });
+      }
+      
+    //   function to disable choices from rock paper and scissor, so that he cant click
+      function disableChoices() {
+        // disabling all choices by removing enabled class from choices array of divs from html
+        choices.forEach((choice) => {
+          choice.classList.remove("enabled");
+        });
+      }
+
+      
+
+
+
   </script>
 </body>
 
