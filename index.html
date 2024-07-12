@@ -45,9 +45,9 @@
     const playAgainButton = document.getElementById("play-again");
 
     const hands = {
-      rock: "images/rock.png",
-      paper: "images/paper.png",
-      scissors: "images/scissor.png",
+      rock: "assets/images/rock.png",
+      paper: "assets/images/paper.png",
+      scissors: "assets/images/scissor.png",
     };
     //   function for getting player choice
     function getComputerChoice() {
@@ -97,7 +97,6 @@
 
     //   function to enable choices for the player so that he can click them
     function enableChoices() {
-        // enabling all choices by addin enabled class from choices array of divs from html
         choices.forEach((choice) => {
           choice.classList.add("enabled");
         });
@@ -105,10 +104,16 @@
       
     //   function to disable choices from rock paper and scissor, so that he cant click
       function disableChoices() {
-        // disabling all choices by removing enabled class from choices array of divs from html
         choices.forEach((choice) => {
           choice.classList.remove("enabled");
         });
+      }
+
+      function resetGame() {
+        result.textContent = "Choose your move!";
+        playerHand.style.backgroundImage = `url('assets/images/rock.png')`;
+        computerHand.style.backgroundImage = `url('assets/images/rock.png')`;
+        enableChoices();
       }
 
       
