@@ -44,8 +44,8 @@ Rock Paper Scissors provides simple entertainment with all information clearly d
  
  ### Content
   * The game inspiration was taken from [Google I/O 2011](https://www.youtube.com/watch?v=yEocRtn_j9s)
-  * The instruction on how to build a game was taken from [Shradha Khapra YouTube channel] (https://youtu.be/_V33HCZWLDQ?si=AjXOaCVSSfpwLHne) and [
-    developedbyed channel] (https://www.youtube.com/watch?v=qWPtKtYEsN4)
+  * The instruction on how to build a game was taken from [Shradha Khapra YouTube channel](https://youtu.be/_V33HCZWLDQ?si=AjXOaCVSSfpwLHne) and [
+    developedbyed channel](https://www.youtube.com/watch?v=qWPtKtYEsN4)
 
  
  ### Media
