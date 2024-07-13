@@ -49,6 +49,7 @@
       paper: "assets/images/paper.png",
       scissors: "assets/images/scissor.png",
     };
+
     //   function for getting player choice
     function getComputerChoice() {
       const choices = ["rock", "paper", "scissors"];
@@ -97,27 +98,59 @@
 
     //   function to enable choices for the player so that he can click them
     function enableChoices() {
-        choices.forEach((choice) => {
-          choice.classList.add("enabled");
-        });
-      }
-      
+      choices.forEach((choice) => {
+        choice.classList.add("enabled");
+      });
+    }
+
     //   function to disable choices from rock paper and scissor, so that he cant click
-      function disableChoices() {
-        choices.forEach((choice) => {
-          choice.classList.remove("enabled");
+    function disableChoices() {
+      choices.forEach((choice) => {
+        choice.classList.remove("enabled");
+      });
+    }
+
+    //   function to reset the game
+    function resetGame() {
+      result.textContent = "Choose your move!";
+      playerHand.style.backgroundImage = `url('assets/images/rock.png')`;
+      computerHand.style.backgroundImage = `url('assets/images/rock.png')`;
+      enableChoices();
+    }
+
+    //   loop on all choices available for the user
+    choices.forEach((choice) => {
+      // click event listener for all choices divs
+      choice.addEventListener("click", () => {
+        // add shake-flip and shake class on player and  computer hand for the animation
+        playerHand.classList.add("shake-flip");
+        computerHand.classList.add("shake");
+
+        //   timeout function for 2 seconds , so that we can see animation for 2 second before procedding further after player clicked the choice
+        setTimeout(() => {
+          // getting player choice from data-choice attribute of choosen div
+            const playerChoice = choice.getAttribute("data-choice");
+            // getting computer choice by calling funciton
+            const computerChoice = getComputerChoice();
+            // show  images according to choices by calling function and sending both choices
+            displayChoices(playerChoice, computerChoice);
+            // getting winner message by calling function and sending both choices
+            const winner = getWinner(playerChoice, computerChoice);
+            // sending winner message and choices in function to display results in divs
+            displayResult(winner, playerChoice, computerChoice);
+            // sending winner message in function to update the score on the winner
+            updateScore(winner);
+            // remove animation from both hands by removing animation classes
+            playerHand.classList.remove("shake-flip");
+            computerHand.classList.remove("shake");
+            // disabale choices for the player until he clicks the button to play agian
+            disableChoices();
+          }, 2000);
         });
-      }
+      });
 
-      function resetGame() {
-        result.textContent = "Choose your move!";
-        playerHand.style.backgroundImage = `url('assets/images/rock.png')`;
-        computerHand.style.backgroundImage = `url('assets/images/rock.png')`;
-        enableChoices();
-      }
-
-      
-
+    //  adding click event to the play again button to call reset game function
+    playAgainButton.addEventListener("click", resetGame);
 
 
   </script>
