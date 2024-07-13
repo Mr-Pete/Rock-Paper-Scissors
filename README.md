@@ -22,8 +22,8 @@ Rock Paper Scissors provides simple entertainment with all information clearly d
   ![game result screenshot](assets/images/Result.png "Game Result Screnshot")
 
 
-#### 4. Game Outcome 
-  * Excitation is built by the shaking hand effect before game outcome is presented. 
+#### 4. Game Excitation 
+  * Excitation is built by the shaking hand effect before the game outcome is presented. 
 
 
 ## Testing 
