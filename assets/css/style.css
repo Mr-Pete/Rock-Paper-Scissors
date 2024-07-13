@@ -92,3 +92,44 @@ h2,
     background-color: #c70039;
     transform: scale(1.1);
   }
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes shake-flip {
+    0% {
+      transform: scaleX(-1) rotate(0deg);
+    }
+    25% {
+      transform: scaleX(-1) rotate(-10deg);
+    }
+    50% {
+      transform: scaleX(-1) rotate(0deg);
+    }
+    75% {
+      transform: scaleX(-1) rotate(10deg);
+    }
+    100% {
+      transform: scaleX(-1) rotate(0deg);
+    }
+  }
+  .shake {
+    animation: shake 1s infinite;
+  }
+  .shake-flip {
+    animation: shake-flip 1s infinite;
+  }
